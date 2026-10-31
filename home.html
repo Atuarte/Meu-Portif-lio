@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#697c70">
+  <title>Portfólio Dev & Teatro</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind e Ícones -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
+  
+  <!-- Estilos e Scripts externos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="w-full">
+  <div class="site-shell">
+    
+    <!-- CABEÇALHO COM CONTROLE DE ABAS -->
+    <header class="w-full border-b rule">
+      <div class="mx-auto max-w-7xl px-6 md:px-10 py-5 flex flex-wrap items-center justify-between gap-5">
+        <a href="#inicio" class="inline-flex items-center gap-3 no-underline" aria-label="Voltar ao início"> 
+          <span aria-hidden="true" class="w-8 h-8 rounded-full border flex items-center justify-center" style="border-color:var(--amarelo);color:var(--amarelo)">✳</span> 
+          <span class="font-semibold tracking-wide">Arthur Guedes</span> 
+        </a>
+        <nav aria-label="Navegação principal" class="flex flex-wrap gap-x-7 gap-y-2 items-center">
+          <a href="#sobre" class="no-underline hover:underline">Sobre</a> 
+          <!-- Botões das Abas -->
+          <button onclick="mudarAba('dev')" id="btn-dev" class="aba-btn active no-underline hover:underline" style="color: var(--accent);">Desenvolvimento</button> 
+          <button onclick="mudarAba('teatro')" id="btn-teatro" class="aba-btn no-underline hover:underline">Teatro</button> 
+          <a href="#contato" class="no-underline hover:underline">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <!-- SEÇÃO HERO (Fixa) -->
+      <section class="mx-auto max-w-7xl px-6 md:px-10 pt-16 md:pt-24 pb-24">
+        <div class="grid lg:grid-cols-[1.12fr_.88fr] gap-14 lg:gap-20 items-center">
+          <div>
+            <p class="eyebrow reveal mb-7">PORTFÓLIO · TECNOLOGIA & ARTES CÊNICAS</p>
+            <h1 class="display reveal delay-1 mb-8" style="font-size:clamp(3.5rem,8vw,7.5rem)">Entre o código e a cena.</h1>
+            <p class="reveal delay-2 max-w-xl leading-relaxed mb-10" style="font-size:1.35rem">Crio experiências digitais e encontro novas formas de contar histórias no palco. Dois mundos, a mesma vontade de conectar pessoas.</p>
+            <div class="reveal delay-2 flex flex-wrap gap-4">
+              <button onclick="mudarAba('dev')" class="inline-flex items-center px-6 py-3 font-semibold no-underline hover:brightness-110" style="background:var(--amarelo);color:var(--verde)">Ver desenvolvimento ↗</button> 
+<button onclick="mudarAba('teatro')" class="inline-flex items-center px-6 py-3 border rule no-underline hover:bg-[#f2efe2] hover:text-[#697c70] transition-colors">Explorar teatro ↗</button>            </div>
+          </div>
+          <div class="relative photo-frame reveal delay-2 mr-4 mb-4">
+            <img class="hero-photo w-full object-cover object-center"> 
+            <span aria-hidden="true" class="absolute z-10 -bottom-7 -left-4 md:-left-8 display" style="color:var(--accent);font-size:5rem">01<span style="font-family:'Alegreya Sans',sans-serif;font-size:1.5rem"> / 02</span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO SOBRE (Fixa) -->
+      <section id="sobre" class="border-t rule scroll-mt-8">
+        <div class="mx-auto max-w-7xl px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-[1fr_2fr] gap-8 md:gap-16">
+          <p class="eyebrow pt-2">01 / SOBRE MIM</p>
+          <div>
+            <h2 class="display mb-8" style="font-size:clamp(2.5rem,5vw,4.5rem)">Lógica para construir. Imaginação para transformar.</h2>
+            <p class="max-w-2xl leading-relaxed" style="font-size:1.25rem">Sou uma pessoa desenvolvedora com interesse por interfaces, ideias e histórias. No desenvolvimento, penso em soluções claras e acessíveis. No teatro, exploro presença, colaboração e expressão. Este espaço reúne essas duas facetas do meu trabalho.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABA DEV (Alternável) -->
+      <div id="aba-dev" class="aba-conteudo active">
+        <section id="desenvolvimento" class="border-t rule scroll-mt-8">
+          <div class="mx-auto max-w-7xl px-6 md:px-10 py-20 md:py-28">
+            <div class="flex flex-wrap items-end justify-between gap-6 mb-12">
+              <div>
+                <p class="eyebrow mb-5">02 / DESENVOLVIMENTO</p>
+                <h2 class="display" style="font-size:clamp(2.8rem,6vw,5rem)">Ideias que viram interfaces.</h2>
+              </div>
+              <p class="max-w-sm leading-relaxed">Um espaço para apresentar projetos, processos e soluções digitais.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-5">
+              <article class="work-card p-8 md:p-10 min-h-64 flex flex-col justify-between">
+                <span class="eyebrow text-sm">PROJETO 01 · WEB</span>
+                <div class="mt-8">
+                  <h3 class="display mb-4" style="font-size:2.1rem">Projeto em destaque</h3>
+                  <p class="leading-relaxed">Substitua este exemplo pela descrição de um projeto seu: o problema, sua contribuição e o resultado.</p>
+                </div>
+              </article>
+              <article class="work-card p-8 md:p-10 min-h-64 flex flex-col justify-between">
+                <span class="eyebrow text-sm">PROJETO 02 · EXPERIÊNCIA</span>
+                <div class="mt-8">
+                  <h3 class="display mb-4" style="font-size:2.1rem">Outra ideia em construção</h3>
+                  <p class="leading-relaxed">Mostre aqui outra experiência de desenvolvimento, suas ferramentas e o que aprendeu no processo.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ABA TEATRO (Alternável) -->
+      <div id="aba-teatro" class="aba-conteudo" style="display: none;">
+        <section id="teatro" class="border-t rule scroll-mt-8">
+          <div class="mx-auto max-w-7xl px-6 md:px-10 py-20 md:py-28">
+            <div class="flex flex-wrap items-end justify-between gap-6 mb-12">
+              <div>
+                <p class="eyebrow mb-5">03 / TEATRO</p>
+                <h2 class="display" style="font-size:clamp(2.8rem,6vw,5rem)">Histórias em presença.</h2>
+              </div>
+              <p class="max-w-sm leading-relaxed">Experiências de palco, criação coletiva e tudo o que acontece entre uma fala e outra.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-5">
+              <article class="work-card p-8 md:p-10 min-h-64 flex flex-col justify-between">
+                <span class="eyebrow text-sm">CENA 01 · ESPETÁCULO</span>
+                <div class="mt-8">
+                  <h3 class="display mb-4" style="font-size:2.1rem">Uma história para contar</h3>
+                  <p class="leading-relaxed">Apresente uma montagem, seu papel na produção e a proposta artística do trabalho.</p>
+                </div>
+              </article>
+              <article class="work-card p-8 md:p-10 min-h-64 flex flex-col justify-between">
+                <span class="eyebrow text-sm">CENA 02 · PROCESSO</span>
+                <div class="mt-8">
+                  <h3 class="display mb-4" style="font-size:2.1rem">O trabalho por trás da cena</h3>
+                  <p class="leading-relaxed">Compartilhe uma oficina, pesquisa, colaboração ou experiência importante em sua trajetória.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- RODAPÉ (Fixo) -->
+    <footer id="contato" class="border-t rule scroll-mt-8">
+      <div class="mx-auto max-w-7xl px-6 md:px-10 py-20 md:py-24">
+        <p class="eyebrow mb-7">04 / CONTATO</p>
+        <h2 class="display max-w-3xl mb-8" style="font-size:clamp(3rem,7vw,6rem)">Vamos criar algo juntos?</h2>
+        <p class="max-w-xl mb-8 leading-relaxed" style="font-size:1.2rem">Para conversar sobre tecnologia, teatro ou projetos que cruzam os dois caminhos, escreva para mim.</p>
+        <a href="mailto:contato@exemplo.com" class="inline-block break-all underline underline-offset-8 hover:opacity-75" style="font-size:clamp(1.35rem,3vw,2rem)">contato@exemplo.com ↗</a>
+        <div class="border-t rule mt-20 pt-6 flex flex-wrap justify-between gap-3">
+          <span>Arthur Guedes · DEV & TEATRO</span> 
+          <a href="#inicio" class="no-underline hover:underline">Voltar ao início ↑</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
